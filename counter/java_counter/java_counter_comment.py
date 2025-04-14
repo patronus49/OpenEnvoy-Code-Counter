@@ -25,7 +25,7 @@ class JavaCounterComments(SyntaxCounterOperations):
 
     def count(self) -> None:
         """ counts all the comment lines code type in input """
-        count = 0
+        count: int = 0
 
         with open(self.__get_path__(), 'r') as file:
             for line in file:

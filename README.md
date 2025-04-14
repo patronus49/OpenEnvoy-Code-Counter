@@ -88,3 +88,29 @@ Produces output as,
   "total": 12
 }
 ```
+## Run with Docker
+Make sure docker is installed on the machine, check with,
+```
+docker -v
+	- should produce and output like,
+	- Docker version 20.10.22, build 3a2c30b
+```
+Build image, with present working directory as project root,
+```
+docker build -f Dockerfile -t openenvoy-code-counter .
+
+```
+Run image in interactive mode,
+```
+ docker run -it openenvoy-code-counter
+```
+Observe the output on stdout,
+```
+> Arguments =  {'syntax': 'java', 'comments': 'single-line', 'counters': 'blank,comments,code,total', 'input': 'single-file', 'path': 'default'}
+> Counter Response =  {
+  "blank": 3,
+  "comments": 3,
+  "code": 6,
+  "total": 12
+}
+```
